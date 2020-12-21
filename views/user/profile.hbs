@@ -6,18 +6,23 @@
         {{#each orders}}
         <div>
             <div>
-                <ul>
+                <ul class="list-group">
                     {{#each this.items}}
-                    <li>
-                        <span class="badge">{{this.price}}</span>
+                    <li class="list-group-item">
+                        <span style="width: 15vh;">
+                            <img src="{{this.item.imagePath}}" alt="" style="width: 15vh;">
+                        </span>
+
                         {{this.item.title}} X {{this.qty}}
+
+                        <span class="badge">{{this.price}}</span>
                     </li>
                     {{/each}}
 
                 </ul>
             </div>
 
-            <div>
+            <div class="card-header">
                 <strong>
                     訂單總金額: $ {{this.cart.totalPrice }}
                 </strong>

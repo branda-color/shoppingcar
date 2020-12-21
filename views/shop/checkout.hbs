@@ -1,71 +1,112 @@
 <div>
     <div class="container">
-        <h1>請確認結帳資訊</h1>
-        <h2>總金額:${{send}}</h2>
+        <h3>請確認結帳資訊</h3>
         <div class="shoppinglist">
             {{#if products}}
-            <div class="row">
-                <div class="container">
-                    <ul class="list-group">
-                        {{#each products}}
-                        <li class="list-group-item">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center word">商品</th>
+                            <th style="white-space: nowrap" class="word">數量</th>
+                            <th class="text-center word">價格</th>
+                            <th class="text-center word">總計</th>
+                        </tr>
+                    </thead>
+                    {{#each products}}
 
-                            <strong>{{this.item.title}}</strong>
-                            <span class="label label-success">${{this.price}}</span>
-                            <span>數量:{{this.qty}}</span>
-                            <div class="btn-group">
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                            <div class="use">
+                                <div class="media">
+                                    <img class="media-object" src="{{this.item.imagePath}}" style="width: 15vh;">
+                                </div>
+                                <div class="media-body text-center">
+                                    <h5>
+                                        {{this.item.title}}
+                                    </h5>
+                                </div>
                             </div>
-                        </li>
-                        {{/each}}
-                    </ul>
+                        </td>
+
+                        <td style="text-align: center; vertical-align: middle" class="realqty">
+                            {{this.qty}}
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center " style="vertical-align: middle">
+                            <strong class="realqty">${{this.item.price}}</strong>
+                        </td>
+
+                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle">
+                            <strong class="realqty">${{this.price}}</strong>
+                        </td>
+                    </tr>
+
+                    {{/each}}
+
+                    <tfoot>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+
+                            <td style="white-space: nowrap">
+                                <h5>訂單總金額:</h5>
+                            </td>
+                            <td class="text-right">
+                                <h5>${{send}}</h5>
+                            </td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+<div class="container">
+    <form action="/shop/checkout" method="POST" id="checkout-form">
+
+        <div>
+            <h3>寄送資訊</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="name">收貨人</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
             </div>
-            {{/if}}
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="address">寄送地址</label>
+                    <input type="text" id="address" name="address" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="phone">連絡電話</label>
+                    <input type="number" id="address" name="phone" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="cellphone">手機號碼</label>
+                    <input type="number" id="address" name="cellphone" class="form-control" required>
+                </div>
+            </div>
         </div>
 
-        <form action="/shop/checkout" method="POST" id="checkout-form">
-            <div class="row container">
-                <span>
-                    <h1>寄送資訊</h1>
-                </span>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="name">收貨人</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="address">寄送地址</label>
-                        <input type="text" id="address" name="address" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="phone">連絡電話</label>
-                        <input type="number" id="address" name="phone" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="cellphone">手機號碼</label>
-                        <input type="number" id="address" name="cellphone" class="form-control" required>
-                    </div>
-                </div>
-            </div>
 
 
-
-            <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{key}}"
-                data-amount="{{total}}" data-currency="HKD" data-name="雅晴芳香診療" data-description="目前僅提供刷卡服務"
-                data-locale="auto" data-image="https://i.postimg.cc/YC0jF2Y0/cajeput.jpg">
-                </script>
-            <script>
-                //隱藏stripe button
-                document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+        <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{key}}"
+            data-amount="{{total}}" data-currency="HKD" data-name="雅晴芳香診療" data-description="目前僅提供刷卡服務"
+            data-locale="auto" data-image="https://i.postimg.cc/YC0jF2Y0/cajeput.jpg">
             </script>
-            <button type="submit" class="btn btn-success btn-lg">確認刷卡</button>
+        <script>
+            //隱藏stripe button
+            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+        </script>
+        <button type="submit" class="btn btn-success">確認刷卡</button>
 
-        </form>
-    </div>
+    </form>
 </div>

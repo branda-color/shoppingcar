@@ -111,7 +111,7 @@ router.get('/shop/checkout', isLoggedIn, function (req, res, next) {
   }
   var cart = new Cart(req.session.cart);
 
-  res.render('shop/checkout', { key: Publishable_Key, send: cart.totalPrice, total: cart.totalPrice * 100, products: cart.generateArray() });
+  res.render('shop/checkout', { key: Publishable_Key, send: cart.totalPrice, total: cart.totalPrice * 100, products: cart.generateArray(), style: 'checkout.css' });
 
 });
 
