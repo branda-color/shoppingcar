@@ -1,0 +1,121 @@
+<div></div>
+<div class="shoppinglist">
+    {{#if products}}
+    <div class="row">
+
+        <div class="container">
+
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center word">商品</th>
+                            <th></th>
+                            <th style="white-space: nowrap" class="word">數量</th>
+                            <th></th>
+                            <th class="text-center word">價格</th>
+                            <th></th>
+                            <th class="text-center word">總計</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    {{#each products}}
+
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                            <div class="use">
+                                <div class="media">
+                                    <img class="media-object" src="{{this.item.imagePath}}" style="width: 15vh;">
+                                </div>
+                                <div class="media-body">
+                                    <h4>
+                                        {{this.item.title}}
+                                    </h4>
+                                    <h5>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="vertical-align: middle">
+                            <a href="/shop/reduce/{{this.item._id}}" id="check">
+                                <li class="fa fa-minus-square realqty"></li>
+                            </a>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle" class="realqty">
+                            {{this.qty}}
+                        </td>
+                        <td style="vertical-align: middle">
+                            <a href="/shop/addByOne/{{this.item._id}}" id="check">
+                                <li class="fa fa-plus-square realqty"></li>
+                            </a>
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center " style="vertical-align: middle">
+                            <strong class="realqty">${{this.item.price}}</strong>
+                        </td>
+                        <td></td>
+                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle">
+                            <strong class="realqty">${{this.price}}</strong>
+                        </td>
+
+                        <td style="white-space: nowrap;vertical-align: middle">
+                            <a href="/shop/remove/{{this.item._id}}" id="check">
+                                <li class="addproduct fa fa-trash realqty">
+                                    清除全部
+                                </li>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    {{/each}}
+
+
+                    <tfoot>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td style="white-space: nowrap">
+                                <h3>訂單總金額:</h3>
+                            </td>
+                            <td class="text-right">
+                                <h3>${{totalPrice}}</h3>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td style="white-space: nowrap">
+                                <div class="check">
+                                    <a href="/shop" type="button" class="btn btn-success">繼續購物</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="check">
+                                    <a href="/shop/checkout" type="button" class="btn btn-success">結帳</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+
+
+<div class="full">
+    <div class="container">
+        <h2>購物車內無商品</h2>
+    </div>
+</div>
+{{/if}}

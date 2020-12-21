@@ -1,0 +1,71 @@
+<div>
+    <div class="container">
+        <h1>請確認結帳資訊</h1>
+        <h2>總金額:${{send}}</h2>
+        <div class="shoppinglist">
+            {{#if products}}
+            <div class="row">
+                <div class="container">
+                    <ul class="list-group">
+                        {{#each products}}
+                        <li class="list-group-item">
+
+                            <strong>{{this.item.title}}</strong>
+                            <span class="label label-success">${{this.price}}</span>
+                            <span>數量:{{this.qty}}</span>
+                            <div class="btn-group">
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+
+        <form action="/shop/checkout" method="POST" id="checkout-form">
+            <div class="row container">
+                <span>
+                    <h1>寄送資訊</h1>
+                </span>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="name">收貨人</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="address">寄送地址</label>
+                        <input type="text" id="address" name="address" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="phone">連絡電話</label>
+                        <input type="number" id="address" name="phone" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="cellphone">手機號碼</label>
+                        <input type="number" id="address" name="cellphone" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{key}}"
+                data-amount="{{total}}" data-currency="HKD" data-name="雅晴芳香診療" data-description="目前僅提供刷卡服務"
+                data-locale="auto" data-image="https://i.postimg.cc/YC0jF2Y0/cajeput.jpg">
+                </script>
+            <script>
+                //隱藏stripe button
+                document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+            </script>
+            <button type="submit" class="btn btn-success btn-lg">確認刷卡</button>
+
+        </form>
+    </div>
+</div>

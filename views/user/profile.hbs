@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="profileset">
+        <h1>帳戶資訊</h1>
+        <hr>
+        <h2>歷史訂單</h2>
+        {{#each orders}}
+        <div>
+            <div>
+                <ul>
+                    {{#each this.items}}
+                    <li>
+                        <span class="badge">{{this.price}}</span>
+                        {{this.item.title}} X {{this.qty}}
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+
+            <div>
+                <strong>
+                    訂單總金額: $ {{this.cart.totalPrice }}
+                </strong>
+            </div>
+
+        </div>
+        {{/each}}
+
+    </div>
+</div>

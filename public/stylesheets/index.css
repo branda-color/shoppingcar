@@ -1,0 +1,106 @@
+
+
+/* -----section1 */
+
+
+.new{
+    color: rgba(140,227,176,0.85);
+    font-size: 40px;
+
+}
+
+#section1 .row >div:hover{
+    
+    opacity: 0.6;
+
+}
+
+#new2{
+    text-decoration: none;
+    color: #6CAC92;
+}
+
+
+#new2:hover{
+    text-decoration: none;
+    color: #6CAC92;
+}
+
+
+/* -----section2 */
+
+.h33{
+    font-size: 30px;
+}
+
+
+
+.advice{
+    color: rgba(92,173,173,0.85);
+    font-size: 40px;
+}
+
+#section2{
+    padding:3px;
+}
+
+
+
+
+/* -----section3 */
+
+.chose{
+    color: cadetblue;
+    font-size: 40px;
+}
+
+.changeway{
+    display: flex;
+    justify-content:space-around;
+    align-items: center; 
+}
+
+
+#prev{
+   color: #CFDD8E;
+   bottom: 25vh;
+   left:6vw ;
+
+}
+
+#next{
+    color:  #CFDD8E;
+    bottom:25vh;
+    right:6vw;
+
+}
+
+
+.thing{
+    text-align: center;
+}
+
+
+
+
+/* -----section4 */
+
+.surround1{
+    color:#21976D;
+    font-size: 40px;
+}
+
+
+
+.btn-outline-success {
+    color:#6CAC92;
+    background-color: #fff;
+    border-color: #6CAC92;
+  }
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active:hover{
+    color: #fff;
+    background-color: #6CAC92;
+    border-color:#6CAC92;
+  }
+
+

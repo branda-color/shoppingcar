@@ -1,0 +1,64 @@
+.full{
+    min-height: calc(100vh - 595px);
+    
+}
+
+
+.shoppinglist{
+
+    min-height: calc(100vh - 480px);
+
+}
+
+
+#check {
+    color:#6CAC92;
+    text-decoration: none;
+
+}
+#check:hover{
+    color:#F4AB25;
+    
+    text-decoration: none;
+}
+
+
+.btn-success {
+    color: #fff;
+    background-color: #6CAC92;
+    border-color: #6CAC92;
+  }
+.btn-success:hover, .btn-success:focus, .btn-success:active:hover{
+    color:#6CAC92 ;
+    background-color:  #fff;
+    border-color:#6CAC92;
+  }
+
+.realqty{
+    font-size: 30px;
+}
+
+
+table{
+    table-layout:auto;
+    
+    
+}
+
+
+.use{
+    display: flex;
+    white-space: nowrap;
+    align-items:center;
+}
+
+
+.check{
+    text-align:right;
+}
+
+
+
+.word{
+    font-size: 30px;
+}
