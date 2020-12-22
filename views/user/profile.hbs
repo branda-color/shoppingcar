@@ -4,33 +4,36 @@
         <hr>
         <h2>歷史訂單</h2>
         {{#each orders}}
-        <div>
-            <div>
-                <ul class="list-group">
-                    {{#each this.items}}
-                    <li class="list-group-item">
-                        <span style="width: 15vh;">
-                            <img src="{{this.item.imagePath}}" alt="" style="width: 15vh;">
-                        </span>
-
-                        {{this.item.title}} X {{this.qty}}
-
-                        <span class="badge">{{this.price}}</span>
-                    </li>
-                    {{/each}}
-
-                </ul>
+        <div class="card border-success">
+            <div class="card-header orderhead">
+                <div>訂單編號:{{this._id}}</div>
+                <div>訂單總金額: $ {{this.cart.totalPrice }}</div>
             </div>
+            <ul class="list-group">
+                {{#each this.items}}
+                <li class="list-group-item">
+                    <span style="width: 15vh;">
+                        <img src="{{this.item.imagePath}}" alt="" style="width: 15vh;">
+                    </span>
 
-            <div class="card-header">
-                <strong>
-                    訂單總金額: $ {{this.cart.totalPrice }}
-                </strong>
-            </div>
+                    {{this.item.title}} X {{this.qty}}
+
+                    <span class="badge">{{this.price}}</span>
+                </li>
+                {{/each}}
+
+            </ul>
 
         </div>
-        <p></p>
-        {{/each}}
+
+
+
 
     </div>
+    <p></p>
+    {{/each}}
+</div>
+
+
+</div>
 </div>
