@@ -107,7 +107,7 @@ router.get('/shop/shopping_cart', function (req, res, next) {
 
 router.get('/shop/checkout', isLoggedIn, function (req, res, next) {
   if (!req.session.cart) {
-    return res.redirect('/shop/shopping-cart');
+    return res.redirect('/shop/shopping-cart', { style: 'shoppingcart.css' });
   }
   var cart = new Cart(req.session.cart);
 
@@ -145,12 +145,18 @@ router.post('/shop/checkout', isLoggedIn, function (req, res, next) {
         paymentId: charge.id,
         name: req.body.name,
         address: req.body.address,
+        city: req.body.City,
+        Area: req.body.Area,
         phone: req.body.phone,
-        cellphone: req.body.cellphone
+        Zip: req.body.Zip,
+        date: new Date(),
+
       });
       order.save(function (err, result) {
         req.session.cart = null;
-        res.render('/') // If no error occurs 
+        res.render('view', { message: '購買成功', style: 'index.css' });
+
+
 
       })
 

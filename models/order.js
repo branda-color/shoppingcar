@@ -7,10 +7,12 @@ var schema = new Schema({
     cart: { type: Object, required: true },
     paymentId: { type: String, required: true },
     name: { type: String, required: true },
-    address: { type: String, required: true },
     phone: { type: String, required: true },
-    cellphone: { type: String, required: true },
-
+    address: { type: Object, required: true },
+    date: { type: String, required: true },
+    city: { type: String, required: true },
+    Area: { type: String, required: true },
+    Zip: { type: String, required: true }
 
 });
 

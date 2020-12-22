@@ -68,34 +68,498 @@
 
         <div>
             <h3>寄送資訊</h3>
+            <div>目前尚未提供超商取貨服務，僅支援線上刷卡付清宅配</div>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="name">收貨人</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="address">寄送地址</label>
-                    <input type="text" id="address" name="address" class="form-control" required>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="phone">連絡電話</label>
-                    <input type="number" id="address" name="phone" class="form-control" required>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="cellphone">手機號碼</label>
-                    <input type="number" id="address" name="cellphone" class="form-control" required>
+        <div class="card">
+            <div class="card-body">
+                選擇運送方式
+                <hr>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked
+                        disabled>
+                    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled" name="shipping">宅配到府
+                    </label>
                 </div>
             </div>
         </div>
 
+        <p></p>
+
+        <div class="card">
+            <div class="card-body">
+                選擇付款方式
+                <hr>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked
+                        disabled>
+                    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled" name="howpay">線上刷卡</label>
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="card">
+            <div class="card-body">
+                收件人資料
+                <hr>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="name">收件人姓名</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="phone">連絡電話</label>
+                            <input type="number" id="phone" name="phone" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="address">寄件地址</label><br>
+                        <select name="City" id="City">
+                            <option value="">請選擇</option>
+                            <option value="台北市">
+                                台北市 </option>
+                            <option value="基隆市">
+                                基隆市 </option>
+                            <option value="台北縣">
+                                台北縣 </option>
+                            <option value="宜蘭縣">
+                                宜蘭縣 </option>
+                            <option value="新竹市">
+                                新竹市 </option>
+                            <option value="新竹縣">
+                                新竹縣 </option>
+                            <option value="桃園縣">
+                                桃園縣 </option>
+                            <option value="苗栗縣">
+                                苗栗縣 </option>
+                            <option value="台中市">
+                                台中市 </option>
+                            <option value="台中縣">
+                                台中縣 </option>
+                            <option value="彰化縣">
+                                彰化縣 </option>
+                            <option value="南投縣">
+                                南投縣 </option>
+                            <option value="嘉義市">
+                                嘉義市 </option>
+                            <option value="嘉義縣">
+                                嘉義縣 </option>
+                            <option value="雲林縣">
+                                雲林縣 </option>
+                            <option value="台南市">
+                                台南市 </option>
+                            <option value="台南縣">
+                                台南縣 </option>
+                            <option value="高雄市">
+                                高雄市 </option>
+                            <option value="高雄縣">
+                                高雄縣 </option>
+                            <option value="澎湖縣">
+                                澎湖縣 </option>
+                            <option value="屏東縣">
+                                屏東縣 </option>
+                            <option value="台東縣">
+                                台東縣 </option>
+                            <option value="花蓮縣">
+                                花蓮縣 </option>
+                            <option value="金門縣">
+                                金門縣 </option>
+                            <option value="連江縣">
+                                連江縣 </option>
+                            <option value="南海諸島">
+                                南海諸島 </option>
+                            <option value="釣魚台列嶼">
+                                釣魚台列嶼 </option>
+                        </select>
+                        縣市
+                        <select name="Area" id="Area">
+                            <option value="中正區" c="台北市" z="100">中正區</option>
+                            <option value="大同區" c="台北市" z="103">大同區</option>
+                            <option value="中山區" c="台北市" z="104">中山區</option>
+                            <option value="松山區" c="台北市" z="105">松山區</option>
+                            <option value="大安區" c="台北市" z="106">大安區</option>
+                            <option value="萬華區" c="台北市" z="108">萬華區</option>
+                            <option value="信義區" c="台北市" z="110">信義區</option>
+                            <option value="士林區" c="台北市" z="111">士林區</option>
+                            <option value="北投區" c="台北市" z="112">北投區</option>
+                            <option value="內湖區" c="台北市" z="114">內湖區</option>
+                            <option value="南港區" c="台北市" z="115">南港區</option>
+                            <option value="文山區" c="台北市" z="116">文山區</option>
+                            <option value="仁愛區" c="基隆市" z="200">仁愛區</option>
+                            <option value="信義區" c="基隆市" z="201">信義區</option>
+                            <option value="中正區" c="基隆市" z="202">中正區</option>
+                            <option value="中山區" c="基隆市" z="203">中山區</option>
+                            <option value="安樂區" c="基隆市" z="204">安樂區</option>
+                            <option value="暖暖區" c="基隆市" z="205">暖暖區</option>
+                            <option value="七堵區" c="基隆市" z="206">七堵區</option>
+                            <option value="萬里鄉" c="台北縣" z="207">萬里鄉</option>
+                            <option value="金山鄉" c="台北縣" z="208">金山鄉</option>
+                            <option value="板橋市" c="台北縣" z="220">板橋市</option>
+                            <option value="汐止市" c="台北縣" z="221">汐止市</option>
+                            <option value="深坑鄉" c="台北縣" z="222">深坑鄉</option>
+                            <option value="石碇鄉" c="台北縣" z="223">石碇鄉</option>
+                            <option value="瑞芳鎮" c="台北縣" z="224">瑞芳鎮</option>
+                            <option value="平溪鄉" c="台北縣" z="226">平溪鄉</option>
+                            <option value="雙溪鄉" c="台北縣" z="227">雙溪鄉</option>
+                            <option value="貢寮鄉" c="台北縣" z="228">貢寮鄉</option>
+                            <option value="新店市" c="台北縣" z="231">新店市</option>
+                            <option value="坪林鄉" c="台北縣" z="232">坪林鄉</option>
+                            <option value="烏來鄉" c="台北縣" z="233">烏來鄉</option>
+                            <option value="永和市" c="台北縣" z="234">永和市</option>
+                            <option value="中和市" c="台北縣" z="235">中和市</option>
+                            <option value="土城市" c="台北縣" z="236">土城市</option>
+                            <option value="三峽鎮" c="台北縣" z="237">三峽鎮</option>
+                            <option value="樹林市" c="台北縣" z="238">樹林市</option>
+                            <option value="鶯歌鎮" c="台北縣" z="239">鶯歌鎮</option>
+                            <option value="三重市" c="台北縣" z="241">三重市</option>
+                            <option value="新莊市" c="台北縣" z="242">新莊市</option>
+                            <option value="泰山鄉" c="台北縣" z="243">泰山鄉</option>
+                            <option value="林口鄉" c="台北縣" z="244">林口鄉</option>
+                            <option value="蘆洲市" c="台北縣" z="247">蘆洲市</option>
+                            <option value="五股鄉" c="台北縣" z="248">五股鄉</option>
+                            <option value="八里鄉" c="台北縣" z="249">八里鄉</option>
+                            <option value="淡水鎮" c="台北縣" z="251">淡水鎮</option>
+                            <option value="三芝鄉" c="台北縣" z="252">三芝鄉</option>
+                            <option value="石門鄉" c="台北縣" z="253">石門鄉</option>
+                            <option value="宜蘭市" c="宜蘭縣" z="260">宜蘭市</option>
+                            <option value="頭城鎮" c="宜蘭縣" z="261">頭城鎮</option>
+                            <option value="礁溪鄉" c="宜蘭縣" z="262">礁溪鄉</option>
+                            <option value="壯圍鄉" c="宜蘭縣" z="263">壯圍鄉</option>
+                            <option value="員山鄉" c="宜蘭縣" z="264">員山鄉</option>
+                            <option value="羅東鎮" c="宜蘭縣" z="265">羅東鎮</option>
+                            <option value="三星鄉" c="宜蘭縣" z="266">三星鄉</option>
+                            <option value="大同鄉" c="宜蘭縣" z="267">大同鄉</option>
+                            <option value="五結鄉" c="宜蘭縣" z="268">五結鄉</option>
+                            <option value="冬山鄉" c="宜蘭縣" z="269">冬山鄉</option>
+                            <option value="蘇澳鎮" c="宜蘭縣" z="270">蘇澳鎮</option>
+                            <option value="南澳鄉" c="宜蘭縣" z="272">南澳鄉</option>
+                            <option value="全區" c="新竹市" z="300">全區</option>
+                            <option value="竹北市" c="新竹縣" z="302">竹北市</option>
+                            <option value="湖口鄉" c="新竹縣" z="303">湖口鄉</option>
+                            <option value="新豐鄉" c="新竹縣" z="304">新豐鄉</option>
+                            <option value="新埔鄉" c="新竹縣" z="305">新埔鄉</option>
+                            <option value="關西鎮" c="新竹縣" z="306">關西鎮</option>
+                            <option value="芎林鄉" c="新竹縣" z="307">芎林鄉</option>
+                            <option value="寶山鄉" c="新竹縣" z="308">寶山鄉</option>
+                            <option value="竹東鎮" c="新竹縣" z="310">竹東鎮</option>
+                            <option value="五峰鄉" c="新竹縣" z="311">五峰鄉</option>
+                            <option value="橫山鄉" c="新竹縣" z="312">橫山鄉</option>
+                            <option value="尖石鄉" c="新竹縣" z="313">尖石鄉</option>
+                            <option value="北埔鄉" c="新竹縣" z="314">北埔鄉</option>
+                            <option value="峨嵋鄉" c="新竹縣" z="315">峨嵋鄉</option>
+                            <option value="中壢市" c="桃園縣" z="320">中壢市</option>
+                            <option value="平鎮市" c="桃園縣" z="324">平鎮市</option>
+                            <option value="龍潭鄉" c="桃園縣" z="325">龍潭鄉</option>
+                            <option value="楊梅鎮" c="桃園縣" z="326">楊梅鎮</option>
+                            <option value="新屋鄉" c="桃園縣" z="327">新屋鄉</option>
+                            <option value="觀音鄉" c="桃園縣" z="328">觀音鄉</option>
+                            <option value="桃園市" c="桃園縣" z="330">桃園市</option>
+                            <option value="龜山鄉" c="桃園縣" z="333">龜山鄉</option>
+                            <option value="八德市" c="桃園縣" z="334">八德市</option>
+                            <option value="大溪鎮" c="桃園縣" z="335">大溪鎮</option>
+                            <option value="復興鄉" c="桃園縣" z="336">復興鄉</option>
+                            <option value="大園鄉" c="桃園縣" z="337">大園鄉</option>
+                            <option value="蘆竹鄉" c="桃園縣" z="338">蘆竹鄉</option>
+                            <option value="竹南鎮" c="苗栗縣" z="350">竹南鎮</option>
+                            <option value="頭份鎮" c="苗栗縣" z="351">頭份鎮</option>
+                            <option value="三灣鄉" c="苗栗縣" z="352">三灣鄉</option>
+                            <option value="南庄鄉" c="苗栗縣" z="353">南庄鄉</option>
+                            <option value="獅潭鄉" c="苗栗縣" z="354">獅潭鄉</option>
+                            <option value="後龍鎮" c="苗栗縣" z="356">後龍鎮</option>
+                            <option value="通霄鎮" c="苗栗縣" z="357">通霄鎮</option>
+                            <option value="苑裡鎮" c="苗栗縣" z="358">苑裡鎮</option>
+                            <option value="苗栗市" c="苗栗縣" z="360">苗栗市</option>
+                            <option value="造橋鄉" c="苗栗縣" z="361">造橋鄉</option>
+                            <option value="頭屋鄉" c="苗栗縣" z="362">頭屋鄉</option>
+                            <option value="公館鄉" c="苗栗縣" z="363">公館鄉</option>
+                            <option value="大湖鄉" c="苗栗縣" z="364">大湖鄉</option>
+                            <option value="泰安鄉" c="苗栗縣" z="365">泰安鄉</option>
+                            <option value="鉰鑼鄉" c="苗栗縣" z="366">鉰鑼鄉</option>
+                            <option value="三義鄉" c="苗栗縣" z="367">三義鄉</option>
+                            <option value="西湖鄉" c="苗栗縣" z="368">西湖鄉</option>
+                            <option value="卓蘭鄉" c="苗栗縣" z="369">卓蘭鄉</option>
+                            <option value="中區" c="台中市" z="400">中區</option>
+                            <option value="東區" c="台中市" z="401">東區</option>
+                            <option value="南區" c="台中市" z="402">南區</option>
+                            <option value="西區" c="台中市" z="403">西區</option>
+                            <option value="北區" c="台中市" z="404">北區</option>
+                            <option value="北屯區" c="台中市" z="406">北屯區</option>
+                            <option value="西屯區" c="台中市" z="407">西屯區</option>
+                            <option value="南屯區" c="台中市" z="408">南屯區</option>
+                            <option value="太平市" c="台中縣" z="411">太平市</option>
+                            <option value="大里市" c="台中縣" z="412">大里市</option>
+                            <option value="霧峰鄉" c="台中縣" z="413">霧峰鄉</option>
+                            <option value="烏日鄉" c="台中縣" z="414">烏日鄉</option>
+                            <option value="豐原市" c="台中縣" z="420">豐原市</option>
+                            <option value="后里鄉" c="台中縣" z="421">后里鄉</option>
+                            <option value="石岡鄉" c="台中縣" z="422">石岡鄉</option>
+                            <option value="東勢鎮" c="台中縣" z="423">東勢鎮</option>
+                            <option value="和平鄉" c="台中縣" z="424">和平鄉</option>
+                            <option value="新社鄉" c="台中縣" z="426">新社鄉</option>
+                            <option value="潭子鄉" c="台中縣" z="427">潭子鄉</option>
+                            <option value="大雅鄉" c="台中縣" z="428">大雅鄉</option>
+                            <option value="神岡鄉" c="台中縣" z="429">神岡鄉</option>
+                            <option value="大肚鄉" c="台中縣" z="432">大肚鄉</option>
+                            <option value="沙鹿鎮" c="台中縣" z="433">沙鹿鎮</option>
+                            <option value="龍井鄉" c="台中縣" z="434">龍井鄉</option>
+                            <option value="梧棲鎮" c="台中縣" z="435">梧棲鎮</option>
+                            <option value="清水鎮" c="台中縣" z="436">清水鎮</option>
+                            <option value="大甲鎮" c="台中縣" z="437">大甲鎮</option>
+                            <option value="外圃鄉" c="台中縣" z="438">外圃鄉</option>
+                            <option value="大安鄉" c="台中縣" z="439">大安鄉</option>
+                            <option value="彰化市" c="彰化縣" z="500">彰化市</option>
+                            <option value="芬園鄉" c="彰化縣" z="502">芬園鄉</option>
+                            <option value="花壇鄉" c="彰化縣" z="503">花壇鄉</option>
+                            <option value="秀水鄉" c="彰化縣" z="504">秀水鄉</option>
+                            <option value="鹿港鎮" c="彰化縣" z="505">鹿港鎮</option>
+                            <option value="福興鄉" c="彰化縣" z="506">福興鄉</option>
+                            <option value="線西鄉" c="彰化縣" z="507">線西鄉</option>
+                            <option value="和美鎮" c="彰化縣" z="508">和美鎮</option>
+                            <option value="伸港鄉" c="彰化縣" z="509">伸港鄉</option>
+                            <option value="員林鎮" c="彰化縣" z="510">員林鎮</option>
+                            <option value="社頭鄉" c="彰化縣" z="511">社頭鄉</option>
+                            <option value="永靖鄉" c="彰化縣" z="5112">永靖鄉</option>
+                            <option value="埔心鄉" c="彰化縣" z="513">埔心鄉</option>
+                            <option value="溪湖鎮" c="彰化縣" z="514">溪湖鎮</option>
+                            <option value="大村鄉" c="彰化縣" z="515">大村鄉</option>
+                            <option value="埔鹽鄉" c="彰化縣" z="516">埔鹽鄉</option>
+                            <option value="田中鎮" c="彰化縣" z="520">田中鎮</option>
+                            <option value="北斗鎮" c="彰化縣" z="521">北斗鎮</option>
+                            <option value="田尾鄉" c="彰化縣" z="522">田尾鄉</option>
+                            <option value="埤頭鄉" c="彰化縣" z="523">埤頭鄉</option>
+                            <option value="溪州鄉" c="彰化縣" z="524">溪州鄉</option>
+                            <option value="竹塘鄉" c="彰化縣" z="525">竹塘鄉</option>
+                            <option value="二林鎮" c="彰化縣" z="526">二林鎮</option>
+                            <option value="大城鄉" c="彰化縣" z="527">大城鄉</option>
+                            <option value="芳苑鄉" c="彰化縣" z="528">芳苑鄉</option>
+                            <option value="二水鄉" c="彰化縣" z="530">二水鄉</option>
+                            <option value="南投市" c="南投縣" z="540">南投市</option>
+                            <option value="中寮鄉" c="南投縣" z="541">中寮鄉</option>
+                            <option value="草屯鎮" c="南投縣" z="542">草屯鎮</option>
+                            <option value="國姓鄉" c="南投縣" z="544">國姓鄉</option>
+                            <option value="埔里鎮" c="南投縣" z="545">埔里鎮</option>
+                            <option value="仁愛鄉" c="南投縣" z="546">仁愛鄉</option>
+                            <option value="名間鄉" c="南投縣" z="551">名間鄉</option>
+                            <option value="集集鄉" c="南投縣" z="552">集集鄉</option>
+                            <option value="水里鄉" c="南投縣" z="553">水里鄉</option>
+                            <option value="魚池鄉" c="南投縣" z="555">魚池鄉</option>
+                            <option value="信義鄉" c="南投縣" z="556">信義鄉</option>
+                            <option value="竹山鎮" c="南投縣" z="557">竹山鎮</option>
+                            <option value="鹿谷鄉" c="南投縣" z="558">鹿谷鄉</option>
+                            <option value="全區" c="嘉義市" z="600">全區</option>
+                            <option value="番路鄉" c="嘉義縣" z="602">番路鄉</option>
+                            <option value="梅山鄉" c="嘉義縣" z="603">梅山鄉</option>
+                            <option value="竹崎鄉" c="嘉義縣" z="604">竹崎鄉</option>
+                            <option value="阿里山" c="嘉義縣" z="605">阿里山</option>
+                            <option value="中埔鄉" c="嘉義縣" z="606">中埔鄉</option>
+                            <option value="大埔鄉" c="嘉義縣" z="607">大埔鄉</option>
+                            <option value="水上鄉" c="嘉義縣" z="608">水上鄉</option>
+                            <option value="鹿草鄉" c="嘉義縣" z="611">鹿草鄉</option>
+                            <option value="太保市" c="嘉義縣" z="612">太保市</option>
+                            <option value="朴子市" c="嘉義縣" z="613">朴子市</option>
+                            <option value="東石鄉" c="嘉義縣" z="614">東石鄉</option>
+                            <option value="六腳鄉" c="嘉義縣" z="615">六腳鄉</option>
+                            <option value="新港鄉" c="嘉義縣" z="616">新港鄉</option>
+                            <option value="民雄鄉" c="嘉義縣" z="621">民雄鄉</option>
+                            <option value="大林鎮" c="嘉義縣" z="622">大林鎮</option>
+                            <option value="漢口鄉" c="嘉義縣" z="623">漢口鄉</option>
+                            <option value="義竹鄉" c="嘉義縣" z="624">義竹鄉</option>
+                            <option value="布袋鎮" c="嘉義縣" z="625">布袋鎮</option>
+                            <option value="斗南市" c="雲林縣" z="630">斗南市</option>
+                            <option value="大埤鄉" c="雲林縣" z="631">大埤鄉</option>
+                            <option value="虎尾鎮" c="雲林縣" z="632">虎尾鎮</option>
+                            <option value="土庫鎮" c="雲林縣" z="633">土庫鎮</option>
+                            <option value="褒忠鄉" c="雲林縣" z="634">褒忠鄉</option>
+                            <option value="東勢鄉" c="雲林縣" z="635">東勢鄉</option>
+                            <option value="台西鄉" c="雲林縣" z="636">台西鄉</option>
+                            <option value="崙背鄉" c="雲林縣" z="637">崙背鄉</option>
+                            <option value="麥寮鄉" c="雲林縣" z="638">麥寮鄉</option>
+                            <option value="斗六市" c="雲林縣" z="640">斗六市</option>
+                            <option value="林內鄉" c="雲林縣" z="643">林內鄉</option>
+                            <option value="古坑鄉" c="雲林縣" z="646">古坑鄉</option>
+                            <option value="莿桐鄉" c="雲林縣" z="647">莿桐鄉</option>
+                            <option value="西螺鎮" c="雲林縣" z="648">西螺鎮</option>
+                            <option value="二崙鄉" c="雲林縣" z="649">二崙鄉</option>
+                            <option value="北港鎮" c="雲林縣" z="651">北港鎮</option>
+                            <option value="水林鄉" c="雲林縣" z="652">水林鄉</option>
+                            <option value="口湖鄉" c="雲林縣" z="653">口湖鄉</option>
+                            <option value="四湖鄉" c="雲林縣" z="654">四湖鄉</option>
+                            <option value="元長鄉" c="雲林縣" z="655">元長鄉</option>
+                            <option value="中區" c="台南市" z="700">中區</option>
+                            <option value="東區" c="台南市" z="701">東區</option>
+                            <option value="南區" c="台南市" z="702">南區</option>
+                            <option value="西區" c="台南市" z="703">西區</option>
+                            <option value="北區" c="台南市" z="704">北區</option>
+                            <option value="安平區" c="台南市" z="708">安平區</option>
+                            <option value="安南區" c="台南市" z="709">安南區</option>
+                            <option value="永康市" c="台南縣" z="710">永康市</option>
+                            <option value="歸仁鄉" c="台南縣" z="711">歸仁鄉</option>
+                            <option value="新化鎮" c="台南縣" z="712">新化鎮</option>
+                            <option value="左鎮鄉" c="台南縣" z="713">左鎮鄉</option>
+                            <option value="玉井鄉" c="台南縣" z="714">玉井鄉</option>
+                            <option value="楠西鄉" c="台南縣" z="715">楠西鄉</option>
+                            <option value="南化鄉" c="台南縣" z="716">南化鄉</option>
+                            <option value="仁德鄉" c="台南縣" z="717">仁德鄉</option>
+                            <option value="關廟鄉" c="台南縣" z="718">關廟鄉</option>
+                            <option value="龍崎鄉" c="台南縣" z="719">龍崎鄉</option>
+                            <option value="官田鄉" c="台南縣" z="720">官田鄉</option>
+                            <option value="麻豆鎮" c="台南縣" z="721">麻豆鎮</option>
+                            <option value="佳里鎮" c="台南縣" z="722">佳里鎮</option>
+                            <option value="西港鄉" c="台南縣" z="723">西港鄉</option>
+                            <option value="七股鄉" c="台南縣" z="724">七股鄉</option>
+                            <option value="將軍鄉" c="台南縣" z="725">將軍鄉</option>
+                            <option value="學甲鎮" c="台南縣" z="726">學甲鎮</option>
+                            <option value="北門鄉" c="台南縣" z="727">北門鄉</option>
+                            <option value="新營市" c="台南縣" z="730">新營市</option>
+                            <option value="後壁鄉" c="台南縣" z="731">後壁鄉</option>
+                            <option value="白河鎮" c="台南縣" z="732">白河鎮</option>
+                            <option value="東山鄉" c="台南縣" z="733">東山鄉</option>
+                            <option value="六甲鄉" c="台南縣" z="734">六甲鄉</option>
+                            <option value="下營鄉" c="台南縣" z="735">下營鄉</option>
+                            <option value="柳營鄉" c="台南縣" z="736">柳營鄉</option>
+                            <option value="鹽水鎮" c="台南縣" z="737">鹽水鎮</option>
+                            <option value="善化鎮" c="台南縣" z="741">善化鎮</option>
+                            <option value="大內鄉" c="台南縣" z="742">大內鄉</option>
+                            <option value="山上鄉" c="台南縣" z="743">山上鄉</option>
+                            <option value="新市鄉" c="台南縣" z="744">新市鄉</option>
+                            <option value="安定鄉" c="台南縣" z="745">安定鄉</option>
+                            <option value="新興區" c="高雄市" z="800">新興區</option>
+                            <option value="前金區" c="高雄市" z="801">前金區</option>
+                            <option value="苓雅區" c="高雄市" z="802">苓雅區</option>
+                            <option value="鹽埕區" c="高雄市" z="803">鹽埕區</option>
+                            <option value="鼓山區" c="高雄市" z="804">鼓山區</option>
+                            <option value="旗津區" c="高雄市" z="805">旗津區</option>
+                            <option value="前鎮區" c="高雄市" z="806">前鎮區</option>
+                            <option value="三民區" c="高雄市" z="807">三民區</option>
+                            <option value="楠梓區" c="高雄市" z="811">楠梓區</option>
+                            <option value="小港區" c="高雄市" z="812">小港區</option>
+                            <option value="左營區" c="高雄市" z="813">左營區</option>
+                            <option value="仁武鄉" c="高雄縣" z="814">仁武鄉</option>
+                            <option value="大社鄉" c="高雄縣" z="815">大社鄉</option>
+                            <option value="岡山鎮" c="高雄縣" z="820">岡山鎮</option>
+                            <option value="路竹鄉" c="高雄縣" z="821">路竹鄉</option>
+                            <option value="阿蓮鄉" c="高雄縣" z="822">阿蓮鄉</option>
+                            <option value="田寮鄉" c="高雄縣" z="823">田寮鄉</option>
+                            <option value="燕巢鄉" c="高雄縣" z="824">燕巢鄉</option>
+                            <option value="橋頭鄉" c="高雄縣" z="825">橋頭鄉</option>
+                            <option value="梓官鄉" c="高雄縣" z="826">梓官鄉</option>
+                            <option value="彌陀鄉" c="高雄縣" z="827">彌陀鄉</option>
+                            <option value="永安鄉" c="高雄縣" z="828">永安鄉</option>
+                            <option value="湖內鄉" c="高雄縣" z="829">湖內鄉</option>
+                            <option value="鳳山市" c="高雄縣" z="830">鳳山市</option>
+                            <option value="大寮鄉" c="高雄縣" z="831">大寮鄉</option>
+                            <option value="林園鄉" c="高雄縣" z="832">林園鄉</option>
+                            <option value="鳥松鄉" c="高雄縣" z="833">鳥松鄉</option>
+                            <option value="大樹鄉" c="高雄縣" z="840">大樹鄉</option>
+                            <option value="旗山鎮" c="高雄縣" z="842">旗山鎮</option>
+                            <option value="美濃鎮" c="高雄縣" z="843">美濃鎮</option>
+                            <option value="六龜鄉" c="高雄縣" z="844">六龜鄉</option>
+                            <option value="內門鄉" c="高雄縣" z="845">內門鄉</option>
+                            <option value="杉林鄉" c="高雄縣" z="846">杉林鄉</option>
+                            <option value="甲仙鄉" c="高雄縣" z="847">甲仙鄉</option>
+                            <option value="桃源鄉" c="高雄縣" z="848">桃源鄉</option>
+                            <option value="三民鄉" c="高雄縣" z="849">三民鄉</option>
+                            <option value="茂林鄉" c="高雄縣" z="851">茂林鄉</option>
+                            <option value="茄萣鄉" c="高雄縣" z="852">茄萣鄉</option>
+                            <option value="馬公市" c="澎湖縣" z="880">馬公市</option>
+                            <option value="西嶼鄉" c="澎湖縣" z="881">西嶼鄉</option>
+                            <option value="望安鄉" c="澎湖縣" z="882">望安鄉</option>
+                            <option value="七美鄉" c="澎湖縣" z="883">七美鄉</option>
+                            <option value="白沙鄉" c="澎湖縣" z="884">白沙鄉</option>
+                            <option value="湖西鄉" c="澎湖縣" z="885">湖西鄉</option>
+                            <option value="屏東市" c="屏東縣" z="900">屏東市</option>
+                            <option value="三地門" c="屏東縣" z="901">三地門</option>
+                            <option value="霧台鄉" c="屏東縣" z="902">霧台鄉</option>
+                            <option value="瑪家鄉" c="屏東縣" z="903">瑪家鄉</option>
+                            <option value="九如鄉" c="屏東縣" z="904">九如鄉</option>
+                            <option value="里港鄉" c="屏東縣" z="905">里港鄉</option>
+                            <option value="高樹鄉" c="屏東縣" z="906">高樹鄉</option>
+                            <option value="鹽埔鄉" c="屏東縣" z="907">鹽埔鄉</option>
+                            <option value="長治鄉" c="屏東縣" z="908">長治鄉</option>
+                            <option value="麟洛鄉" c="屏東縣" z="909">麟洛鄉</option>
+                            <option value="竹田鄉" c="屏東縣" z="911">竹田鄉</option>
+                            <option value="內埔鄉" c="屏東縣" z="912">內埔鄉</option>
+                            <option value="萬丹鄉" c="屏東縣" z="913">萬丹鄉</option>
+                            <option value="潮州鎮" c="屏東縣" z="920">潮州鎮</option>
+                            <option value="泰武鄉" c="屏東縣" z="921">泰武鄉</option>
+                            <option value="來義鄉" c="屏東縣" z="922">來義鄉</option>
+                            <option value="萬巒鄉" c="屏東縣" z="923">萬巒鄉</option>
+                            <option value="嵌頂鄉" c="屏東縣" z="924">嵌頂鄉</option>
+                            <option value="新埤鄉" c="屏東縣" z="925">新埤鄉</option>
+                            <option value="南州鄉" c="屏東縣" z="926">南州鄉</option>
+                            <option value="林邊鄉" c="屏東縣" z="927">林邊鄉</option>
+                            <option value="東港鎮" c="屏東縣" z="928">東港鎮</option>
+                            <option value="琉球鄉" c="屏東縣" z="929">琉球鄉</option>
+                            <option value="佳冬鄉" c="屏東縣" z="931">佳冬鄉</option>
+                            <option value="新園鄉" c="屏東縣" z="932">新園鄉</option>
+                            <option value="枋寮鄉" c="屏東縣" z="940">枋寮鄉</option>
+                            <option value="枋山鄉" c="屏東縣" z="941">枋山鄉</option>
+                            <option value="春日鄉" c="屏東縣" z="942">春日鄉</option>
+                            <option value="獅子鄉" c="屏東縣" z="943">獅子鄉</option>
+                            <option value="車城鄉" c="屏東縣" z="944">車城鄉</option>
+                            <option value="牡丹鄉" c="屏東縣" z="945">牡丹鄉</option>
+                            <option value="恆春鎮" c="屏東縣" z="946">恆春鎮</option>
+                            <option value="滿州鄉" c="屏東縣" z="947">滿州鄉</option>
+                            <option value="台東市" c="台東縣" z="950">台東市</option>
+                            <option value="綠島鄉" c="台東縣" z="951">綠島鄉</option>
+                            <option value="蘭嶼鄉" c="台東縣" z="952">蘭嶼鄉</option>
+                            <option value="延平鄉" c="台東縣" z="953">延平鄉</option>
+                            <option value="卑南鄉" c="台東縣" z="954">卑南鄉</option>
+                            <option value="鹿野鄉" c="台東縣" z="955">鹿野鄉</option>
+                            <option value="關山鎮" c="台東縣" z="956">關山鎮</option>
+                            <option value="海端鄉" c="台東縣" z="957">海端鄉</option>
+                            <option value="池上鄉" c="台東縣" z="958">池上鄉</option>
+                            <option value="東河鄉" c="台東縣" z="959">東河鄉</option>
+                            <option value="成氐燡" c="台東縣" z="961">成氐燡</option>
+                            <option value="長濱鄉" c="台東縣" z="962">長濱鄉</option>
+                            <option value="太麻里" c="台東縣" z="963">太麻里</option>
+                            <option value="金峰鄉" c="台東縣" z="964">金峰鄉</option>
+                            <option value="大武鄉" c="台東縣" z="965">大武鄉</option>
+                            <option value="達仁鄉" c="台東縣" z="966">達仁鄉</option>
+                            <option value="花蓮市" c="花蓮縣" z="970">花蓮市</option>
+                            <option value="新城鄉" c="花蓮縣" z="971">新城鄉</option>
+                            <option value="秀林鄉" c="花蓮縣" z="972">秀林鄉</option>
+                            <option value="吉安鄉" c="花蓮縣" z="973">吉安鄉</option>
+                            <option value="壽豐鄉" c="花蓮縣" z="974">壽豐鄉</option>
+                            <option value="鳳林鎮" c="花蓮縣" z="975">鳳林鎮</option>
+                            <option value="光復鄉" c="花蓮縣" z="976">光復鄉</option>
+                            <option value="豐濱鄉" c="花蓮縣" z="977">豐濱鄉</option>
+                            <option value="瑞穗鄉" c="花蓮縣" z="978">瑞穗鄉</option>
+                            <option value="萬榮鄉" c="花蓮縣" z="979">萬榮鄉</option>
+                            <option value="玉里鎮" c="花蓮縣" z="981">玉里鎮</option>
+                            <option value="卓溪鄉" c="花蓮縣" z="982">卓溪鄉</option>
+                            <option value="富里鄉" c="花蓮縣" z="983">富里鄉</option>
+                            <option value="金沙鎮" c="金門縣" z="890">金沙鎮</option>
+                            <option value="金湖鎮" c="金門縣" z="891">金湖鎮</option>
+                            <option value="金寧鄉" c="金門縣" z="892">金寧鄉</option>
+                            <option value="金城鎮" c="金門縣" z="893">金城鎮</option>
+                            <option value="烈嶼鄉" c="金門縣" z="894">烈嶼鄉</option>
+                            <option value="烏坵鄉" c="金門縣" z="896">烏坵鄉</option>
+                            <option value="南竿鄉" c="連江縣" z="209">南竿鄉</option>
+                            <option value="北竿鄉" c="連江縣" z="210">北竿鄉</option>
+                            <option value="莒光鄉" c="連江縣" z="211">莒光鄉</option>
+                            <option value="東引" c="連江縣" z="212">東引</option>
+                            <option value="東沙" c="南海諸島" z="817">東沙</option>
+                            <option value="西沙" c="南海諸島" z="819">西沙</option>
+                            <option value="全區" c="釣魚台列嶼" z="290">全區</option>
+                        </select>
+                        鄉鎮地區
+                        <input name="Zip" type="text" id="ZIP" size="5" />
+                        郵遞區號
+                        <p></p>
+                        <input name="address" type="text" id="address" placeholder="請輸入詳細地址" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p></p>
 
 
         <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{key}}"
@@ -110,3 +574,38 @@
 
     </form>
 </div>
+
+
+<script>
+    var nDefCity = "<?=$rowMember->city?>";
+    var nDefArea = "<?=$rowMember->area?>";
+
+    function setCityArea() {
+        $("#Area option").remove();
+        $("#Area").append("<option value=''>請選擇</option>").append($("#jAllArea option[c=" + $("#City").val() + "]").clone());
+        if ($("#City").val() == nDefCity && nDefCity !== "") $("#Area option[value='" + nDefArea + "']").attr("selected", true);
+    }
+
+
+    function setZip() {
+        $("#ZIP").val($("#Area option:selected").attr("z"));
+    }
+
+
+    $(function () {
+        //複製新Area並隱藏
+        $("#Area").after('<select name="jAllArea" id="jAllArea"></select>');
+        $("#jAllArea").hide().append($("#Area option").clone());
+
+        $("#City").change(function () {
+            setCityArea($(this).val());
+            setZip();
+        });
+        $("#Area").change(function () {
+            setZip();
+        });
+
+        setCityArea();
+    });
+
+</script>
