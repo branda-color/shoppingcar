@@ -12,7 +12,9 @@ var schema = new Schema({
     date: { type: String, required: true },
     city: { type: String, required: true },
     Area: { type: String, required: true },
-    Zip: { type: String, required: true }
+    Zip: { type: String, required: true },
+    howpay: { type: Object, required: true },
+    shipping: { type: Object, required: true },
 
 });
 

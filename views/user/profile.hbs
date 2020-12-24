@@ -21,8 +21,11 @@
                     <span class="badge">{{this.price}}</span>
                 </li>
                 {{/each}}
+                <li class="list-group-item">收件人姓名:{{this.name}}</li>
+                <li class="list-group-item">收件人電話:{{this.phone}}</li>
 
             </ul>
+
 
         </div>
 
@@ -37,3 +40,131 @@
 
 </div>
 </div>
+
+
+
+
+<div class="container">
+    <div class="profileset">
+        <h1>帳戶資訊</h1>
+        <hr>
+        <h2>歷史訂單</h2>
+        {{#each orders}}
+        <div class="card border-success">
+            <div class="card-header orderhead">
+                <div>訂單編號:{{this._id}}</div>
+                <div>訂單總金額: $ {{this.cart.totalPrice }}</div>
+            </div>
+            <div class=" card-body">
+                <div>訂單日期:{{this.date}}</div>
+                <div>配送方式:{{this.shipping}}</div>
+                <div>付款方式:{{this.howpay}}</div>
+                <div>收件人:{{this.name}}</div>
+                <div>收件地址:{{this.city}}{{this.Area}}{{this.address}}</div>
+                <div>收件人電話:{{this.phone}}</div>
+
+            </div>
+
+            <div class="container">
+                <button type="button" class="btn btn-outline-success" name="productbtn" id="{{this._id}}">商品詳情</button>
+            </div>
+            <p></p>
+            <div>
+                <div class="card border-warning productlist" name="productlist" id="{{this._id}}" style="display:none;">
+                    <ul class="list-group">
+                        {{#each this.items}}
+                        <li class="list-group-item">
+                            <span style="width: 15vh;">
+                                <img src="{{this.item.imagePath}}" alt="" style="width: 15vh;">
+                            </span>
+
+                            {{this.item.title}} X {{this.qty}}
+
+                            <span class="badge">{{this.price}}</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <p></p>
+    {{/each}}
+</div>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        // 所有 class 為 btns 的元件都綁定此 click 事件
+        $("button[name=productbtn]").click(function () {
+            var id = $(this).attr("id");          // equals：this.id
+
+            console.log('點按鈕了', this.id);
+
+            $("div[name=productlist]")(function () {
+
+                var id2 = $(this).attr("id");
+
+                console.log('明細', this.id);
+
+
+                if (id == id2) {
+
+
+                    $("div[name=productlist]").slideToggle();
+
+                }
+
+
+
+
+            });
+
+
+        });
+
+    });
+
+
+
+
+
+
+
+
+
+
+    $("button[name=productbtn]").click(function () {
+        $("div[name=productlist]").slideToggle();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+    $("div[name=productlist]").hidden(function () {
+
+        console.log('明細', this.id);
+
+
+
+
+    });
+
+
+
+
+</script>

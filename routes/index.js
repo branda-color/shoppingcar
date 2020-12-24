@@ -144,11 +144,13 @@ router.post('/shop/checkout', isLoggedIn, function (req, res, next) {
         cart: cart,
         paymentId: charge.id,
         name: req.body.name,
-        address: req.body.address,
         city: req.body.City,
         Area: req.body.Area,
+        address: req.body.address,
         phone: req.body.phone,
         Zip: req.body.Zip,
+        howpay: req.body.howpay,
+        shipping: req.body.shipping,
         date: new Date(),
 
       });
