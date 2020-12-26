@@ -25,3 +25,17 @@
     border-color:#6CAC92;
   }
 
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+
+    padding-left: 0px;
+
+    padding-right: 0px;
+
+  }
+
+
+  .probt{
+
+    padding-left: 15px;
+
+  }
