@@ -11,7 +11,7 @@
                     <div>訂單總金額: $ {{this.cart.totalPrice }}</div>
                 </div>
                 <div class="card-body">
-                    <div>訂單日期:{{this.date}}</div>
+                    <div name="dateid">訂單日期:{{this.date}}</div>
                     <div>配送方式:{{this.shipping}}</div>
                     <div>付款方式:{{this.howpay}}</div>
                     <div>收件人:{{this.name}}</div>
@@ -37,8 +37,10 @@
 
                                 {{this.item.title}} X {{this.qty}}
 
-                                <span class="badge">{{this.price}}</span>
+                                <span>&nbsp;&nbsp;總計:{{this.price}}</span>
+
                             </li>
+
                             {{/each}}
                         </ul>
                     </div>
@@ -54,36 +56,37 @@
 
 <script>
 
+    $("button[name=productbtn]").bind('click', function () {
 
-    $.each($("button[name=productbtn]"), function () {
-        $(this).on("click", function () {
-            // --- 推薦(程式跑起來瀏覽器按F12會開啟開發者工具)
-            // --- 執行click 程式會停在這
-            // --- 測試完畢好習慣要把debugger;拿掉----感恩我完全不知道有這功能^^
-            // --- 往下跑就可以看到id的值
-            var id = $(this).val();
-            // --- 不建議用console.log
-            console.log('點按鈕了', id);
-
-
-            $("div[name=productlist]").hide(function () {
-
-                var id2 = this.id;
-
-                console.log('明細', id2);
-
-                if (id == id2) {
-
-                    $(this).slideDown();
-
-                }
+        var id = $(this).val();
+        console.log('點按鈕了', id);
 
 
 
-            });
+
+        $("div[name=productlist]").hide(function () {
+
+            var id2 = this.id;
+
+            console.log('明細', id2);
+
+            if (id == id2 && $(this).css("display") == "none") {
+
+                $(this).slideDown();
+
+                console.log('到底是哪個', $(this));
+
+            }
 
         });
+
+
+
     });
+
+
+
+
 
 
 

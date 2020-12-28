@@ -3,7 +3,6 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
 const { session } = require('passport');
-
 var Order = require('../models/order');
 var Cart = require('../models/cart');
 
@@ -60,7 +59,7 @@ router.post('/signup', passport.authenticate('local.signup', {
             req.session.oldUrl = null;
             res.redirect(oldUrl);
         } else {
-            res.redirect('/user/profile');
+            res.redirect('/');
         }
     });
 

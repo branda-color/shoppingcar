@@ -26,7 +26,6 @@ router.get('/', function (req, res, next) {
 
 
 
-
 router.get('/shop', function (req, res, next) {
 
   var successMsg = req.flash('success')[0];
