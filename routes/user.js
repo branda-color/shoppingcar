@@ -21,7 +21,7 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
             cart = new Cart(order.cart);
             order.items = cart.generateArray();
         });
-        res.render('user/profile', { orders: orders, style: 'profile.css' });
+        res.render('user/profile', { orders: orders, style: 'profile.css', title: '歷史訂單' });
     })
         .lean();
 });
@@ -43,7 +43,7 @@ router.use('/', notLoggedIn, function (req, res, next) {
 
 router.get('/signup', function (req, res, next) {
     var message = req.flash('error');
-    res.render('user/signup', { csrfToken: req.csrfToken(), message: message, hasErrors: message.length > 0, style: 'signup.css' });
+    res.render('user/signup', { csrfToken: req.csrfToken(), message: message, hasErrors: message.length > 0, style: 'signup.css', title: '註冊會員 ' });
 
 });
 
@@ -70,7 +70,7 @@ router.post('/signup', passport.authenticate('local.signup', {
 
 router.get('/signin', function (req, res, next) {
     var message = req.flash('error');
-    res.render('user/signin', { csrfToken: req.csrfToken(), message: message, hasErrors: message.length > 0, style: 'signin.css' });
+    res.render('user/signin', { csrfToken: req.csrfToken(), message: message, hasErrors: message.length > 0, style: 'signin.css', title: '登入會員' });
 
 });
 

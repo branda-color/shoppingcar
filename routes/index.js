@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
 
 
 
-  res.render('view', { style: 'index.css' });
+  res.render('view', { style: 'index.css', title: '雅晴芳香診療' });
 
 });
 
@@ -35,7 +35,7 @@ router.get('/shop', function (req, res, next) {
     var productList = docs.map(x => x.toObject());
 
 
-    res.render('shop/index', { title: 'Shopping Cart', products: productList, successMsg: successMsg, noMessages: !successMsg, style: 'product.css' });
+    res.render('shop/index', { title: '精選商品', products: productList, successMsg: successMsg, noMessages: !successMsg, style: 'product.css' });
 
   });
 
@@ -99,7 +99,7 @@ router.get('/shop/shopping_cart', function (req, res, next) {
     return res.render('shop/shopping_cart', { products: null });
   }
   var cart = new Cart(req.session.cart);
-  res.render('shop/shopping_cart', { products: cart.generateArray(), totalPrice: cart.totalPrice, style: 'shoppingcart.css' });
+  res.render('shop/shopping_cart', { products: cart.generateArray(), totalPrice: cart.totalPrice, style: 'shoppingcart.css', title: '購物車' });
 });
 
 
@@ -110,7 +110,7 @@ router.get('/shop/checkout', isLoggedIn, function (req, res, next) {
   }
   var cart = new Cart(req.session.cart);
 
-  res.render('shop/checkout', { key: Publishable_Key, send: cart.totalPrice, total: cart.totalPrice * 100, products: cart.generateArray(), style: 'checkout.css' });
+  res.render('shop/checkout', { key: Publishable_Key, send: cart.totalPrice, total: cart.totalPrice * 100, products: cart.generateArray(), style: 'checkout.css', title: '結帳' });
 
 });
 
@@ -155,7 +155,7 @@ router.post('/shop/checkout', isLoggedIn, function (req, res, next) {
       });
       order.save(function (err, result) {
         req.session.cart = null;
-        res.render('view', { message: '購買成功', style: 'index.css' });
+        res.render('view', { message: '購買成功', style: 'index.css', title: '結帳刷卡' });
 
 
 
