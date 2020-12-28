@@ -1,0 +1,27 @@
+.btn-outline-success {
+    color:#6CAC92;
+    background-color: #fff !important;
+    border-color: #6CAC92;
+    margin-bottom: 3px;
+    padding:5px ;
+    font-size: 20px;
+  }
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active:hover{
+    color: #fff;
+    background-color: #6CAC92 !important;
+    border-color:#6CAC92;
+    margin-bottom: 3px;
+    padding:5px ;
+    font-size: 20px;
+  }
+
+.card{
+    margin: 10px;
+}
+
+
+.newstitle{
+
+    color:#21976D;
+    font-size: 40px;
+} 
