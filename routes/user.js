@@ -86,7 +86,7 @@ router.post('/signin', passport.authenticate('local.signin', {
         res.redirect(oldUrl);
 
     } else {
-        res.redirect('/user/profile');
+        res.redirect('/');
     }
 });
 

@@ -12,6 +12,13 @@ var Order = require('../models/order');
 var Product = require('../models/product');
 
 
+
+var router = express.Router();
+var Schedule = require('../models/schedule');
+
+
+
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
@@ -168,6 +175,48 @@ router.post('/shop/checkout', isLoggedIn, function (req, res, next) {
 
 
 });
+
+
+
+
+router.get('/schedule/addschedule', isLoggedIn, function (req, res, next) {
+
+  res.render('reserve/schedule', { style: 'schedule.css', title: '立即預約' });
+
+});
+
+
+
+router.post('/schedule/addschedule', isLoggedIn, function (req, res, next) {
+
+
+  let data = {
+    user: req.user,
+    name: req.body.name,
+    phone: req.body.phone,
+    date: new Date(),
+    schedule: req.body.schedule,
+    person: req.body.person,
+    class: req.body.class,
+    time: req.body.time
+
+  }
+
+  console.log('資料', data);
+
+  var addSchedule = new Schedule(data);
+
+
+
+  addSchedule.save(function (err, result) {
+    res.render('view', { message: '預約成功', style: 'index.css' });
+
+  });
+
+
+
+});
+
 
 
 

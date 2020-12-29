@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<div class="container">
+    <form action="/schedule/addschedule" method="POST" id="reserve-form">
+        <div class="card-body">
+            <h3 class="reserve">立即預約</h3>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="name">預約大名</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="phone">預約電話</label>
+                        <input type="number" id="phone" name="phone" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="person">預約人數</label>
+                        <select class="form-control" id="person" name="person">
+                            <option value="">請選擇</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="class">預約課程</label>
+                        <select class="form-control" id="class1" name="class">
+                            <option>十大系統精油全身淋巴按摩</option>
+                            <option>紫錐菊黑茴香美肌護理</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="date">預約日期</label>
+                        <input type="text" id="datepicker" class="form-control" name="schedule">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="time">預約時間</label>
+                        <select class="form-control" id="time1" name="time">
+                            <option value="">請選擇</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="note">特殊需求</label>
+                        <input type="text" id="note" name="note" class="form-control">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                當您完成線上預約後，我們會儘快與您聯繫與確認：<br>
+                1.如時段OK，將致電通知您<br>
+                2.如時段已客滿，將致電與您協調改訂其他時段<br>
+            </div>
+            <p></p>
+            <button type="submit" class="btn btn-success">確認</button>
+        </div>
+
+    </form>
+</div>
+
+
+
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+</script>
