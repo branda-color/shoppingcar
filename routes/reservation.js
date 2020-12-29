@@ -42,5 +42,25 @@ router.get('/group', function (req, res, next) {
 
 
 
+router.get('/introbody', function (req, res, next) {
+
+
+    res.render('interview/introbody', { style: 'bali.css', title: '全身淋巴按摩' });
+
+});
+
+
+
+router.get('/introface', function (req, res, next) {
+
+
+    res.render('interview/introface', { style: 'bali.css', title: '美肌護理' });
+
+});
+
+
+
+
+
 
 module.exports = router;
