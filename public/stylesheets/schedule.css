@@ -1,3 +1,15 @@
 .reserve{
     color: #A2B59F;
 }
+
+
+.btn-success {
+    color: #fff;
+    background-color: #6CAC92 !important;
+    border-color: #6CAC92;
+  }
+.btn-success:hover, .btn-success:focus, .btn-success:active:hover{
+    color:#6CAC92  ;
+    background-color:  #fff !important;
+    border-color:#6CAC92;
+  }

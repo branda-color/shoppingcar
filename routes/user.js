@@ -5,9 +5,22 @@ var passport = require('passport');
 const { session } = require('passport');
 var Order = require('../models/order');
 var Cart = require('../models/cart');
+var Schedule = require('../models/schedule');
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
+
+router.get('/historyschedule', isLoggedIn, function (req, res, next) {
+    Schedule.find({ user: req.user }, function (err, schedule) {
+        if (err) {
+            return res.write('Error');
+        }
+
+        res.render('reserve/oldschedule', { schedule: schedule, style: 'oldschedule.css', title: '預約紀錄' });
+    })
+        .lean();
+});
+
 
 
 router.get('/profile', isLoggedIn, function (req, res, next) {

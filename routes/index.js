@@ -7,16 +7,8 @@ var Secret_Key = 'sk_test_51HvfSXFV0g6r9YWuXcmGc1Q86lvpbpClUHPOkB8OovezzPJvxQFBz
 const stripe = require('stripe')(Secret_Key);
 var Order = require('../models/order');
 
-
-
 var Product = require('../models/product');
-
-
-
-var router = express.Router();
 var Schedule = require('../models/schedule');
-
-
 
 
 /* GET home page. */
@@ -214,12 +206,20 @@ router.post('/schedule/addschedule', isLoggedIn, function (req, res, next) {
   });
 
 
-
 });
 
 
+router.get('/schedule/deleteschedule', isLoggedIn, function (req, res, next) {
 
+  res.render('reserve/deleteschedule', { style: 'schedule.css', title: '取消預約' });
 
+});
+
+router.post('/schedule/deleteschedule', function (req, res, next) {
+  var id = req.body.id;
+  Schedule.findByIdAndRemove(id).exec();
+  res.render('view', { message: '取消成功，請進入預約歷史查詢', style: 'index.css' });
+});
 
 
 
@@ -235,4 +235,3 @@ function isLoggedIn(req, res, next) {
   res.redirect('/user/signin');
 
 }
-

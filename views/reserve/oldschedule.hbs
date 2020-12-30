@@ -1,0 +1,41 @@
+<div class="full">
+
+    {{#if schedule}}
+    <div class="container">
+        <div class="profileset">
+            <h1>預約資訊</h1>
+            <hr>
+            <h2>預約歷史</h2>
+            {{#each schedule}}
+            <div class="container">
+                <div class="card border-success">
+                    <div class="card-header orderhead">
+                        <div>預約編號:{{this._id}}</div>
+                        <div>預約建立日期:{{this.date}}</div>
+                    </div>
+                    <div class="card-body">
+                        <div>預約大名:{{this.name}}</div>
+                        <div>預約電話:{{this.phone}}</div>
+                        <div>預約人數:{{this.person}}</div>
+                        <div>預約課程:{{this.class}}</div>
+                        <div>來店日期:{{this.schedule}}</div>
+                        <div>按摩時段:{{this.time}}</div>
+                    </div>
+
+
+                </div>
+            </div>
+            <p></p>
+            {{/each}}
+        </div>
+    </div>
+
+    {{else}}
+
+    <div style="min-height: calc(100vh - 595px);">
+        <div class="container">
+            <h2>目前無任何預定紀錄</h2>
+        </div>
+    </div>
+
+    {{/if}}

@@ -1,12 +1,6 @@
-.full{
-    min-height: calc(100vh - 595px);
-    
-}
-
-
 .shoppinglist{
 
-    min-height: calc(100vh - 480px);
+    min-height: calc(100vh - 595px);
 
 }
 

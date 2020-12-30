@@ -1,57 +1,72 @@
-<div class="container">
-    <div class="profileset">
-        <h1>帳戶資訊</h1>
-        <hr>
-        <h2>歷史訂單</h2>
-        {{#each orders}}
-        <div class="container">
-            <div class="card border-success">
-                <div class="card-header orderhead">
-                    <div>訂單編號:{{this._id}}</div>
-                    <div>訂單總金額: $ {{this.cart.totalPrice }}</div>
-                </div>
-                <div class="card-body">
-                    <div name="dateid">訂單日期:{{this.date}}</div>
-                    <div>配送方式:{{this.shipping}}</div>
-                    <div>付款方式:{{this.howpay}}</div>
-                    <div>收件人:{{this.name}}</div>
-                    <div>收件地址:{{this.city}}{{this.Area}}{{this.address}}</div>
-                    <div>收件人電話:{{this.phone}}</div>
+<div class="shoppinglist">
+    {{#if orders}}
 
-                </div>
-                <div class="container probt">
+    <div class="container">
+        <div class="profileset">
+            <h1>帳戶資訊</h1>
+            <hr>
+            <h2>歷史訂單</h2>
 
-                    <button type="button" class="btn btn-outline-success" name="productbtn"
-                        value="{{this._id}}">商品詳情</button>
+            {{#each orders}}
+            <div class="container">
+                <div class="card border-success">
+                    <div class="card-header orderhead">
+                        <div>訂單編號:{{this._id}}</div>
+                        <div>訂單總金額: $ {{this.cart.totalPrice }}</div>
+                    </div>
+                    <div class="card-body">
+                        <div name="dateid">訂單日期:{{this.date}}</div>
+                        <div>配送方式:{{this.shipping}}</div>
+                        <div>付款方式:{{this.howpay}}</div>
+                        <div>收件人:{{this.name}}</div>
+                        <div>收件地址:{{this.city}}{{this.Area}}{{this.address}}</div>
+                        <div>收件人電話:{{this.phone}}</div>
 
-                    <p></p>
+                    </div>
+                    <div class="container probt">
 
-                    <div class="card border-warning productlist" name="productlist" id="{{this._id}}"
-                        style="display: none;">
-                        <ul class="list-group">
-                            {{#each this.items}}
-                            <li class="list-group-item">
-                                <span style="width: 15vh;">
-                                    <img src="{{this.item.imagePath}}" alt="" style="width: 15vh;">
-                                </span>
+                        <button type="button" class="btn btn-outline-success" name="productbtn"
+                            value="{{this._id}}">商品詳情</button>
 
-                                {{this.item.title}} X {{this.qty}}
+                        <p></p>
 
-                                <span>&nbsp;&nbsp;總計:{{this.price}}</span>
+                        <div class="card border-warning productlist" name="productlist" id="{{this._id}}"
+                            style="display: none;">
+                            <ul class="list-group">
+                                {{#each this.items}}
+                                <li class="list-group-item">
+                                    <span style="width: 15vh;">
+                                        <img src="{{this.item.imagePath}}" alt="" style="width: 15vh;">
+                                    </span>
 
-                            </li>
+                                    {{this.item.title}} X {{this.qty}}
 
-                            {{/each}}
-                        </ul>
+                                    <span>&nbsp;&nbsp;總計:{{this.price}}</span>
+
+                                </li>
+
+                                {{/each}}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+        <p></p>
+        {{/each}}
     </div>
-    <p></p>
-    {{/each}}
+
 </div>
+{{else}}
+<div class="full" style="min-height: calc(100vh - 595px);">
+    <div class="container">
+        <h2>目前尚無訂購紀錄</h2>
+    </div>
+</div>
+
+{{/if}}
+
 
 
 <script>
