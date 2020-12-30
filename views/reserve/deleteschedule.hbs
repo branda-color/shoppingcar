@@ -1,10 +1,14 @@
-<section class="delete">
-    <h3>Delete Data</h3>
-    <form action="/schedule/deleteschedule" method="post">
-        <div class="input">
-            <label for="id">ID</label>
-            <input type="text" id="id" name="id">
-        </div>
-        <button type="submit">DELETE</button>
-    </form>
-</section>
+<div class="delete">
+    <div class="container">
+        <h1>取消預約</h1>
+        <hr>
+        <form action="/schedule/deleteschedule" method="post" class="form-group">
+            <div class="input">
+                <label for="id">請輸入預約編號:</label>
+                <input type="text" id="id" name="id" class="form-control">
+            </div>
+            <p></p>
+            <button type="submit" class="btn btn-success">取消預約</button>
+        </form>
+    </div>
+</div>

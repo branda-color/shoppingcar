@@ -11,6 +11,7 @@ var schema = new Schema({
     person: { type: Number, required: true },
     class: { type: String, required: true },
     time: { type: String, required: true },
+    note: { type: String }
 
 
 });

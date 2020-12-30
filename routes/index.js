@@ -190,7 +190,8 @@ router.post('/schedule/addschedule', isLoggedIn, function (req, res, next) {
     schedule: req.body.schedule,
     person: req.body.person,
     class: req.body.class,
-    time: req.body.time
+    time: req.body.time,
+    note: req.body.note
 
   }
 
@@ -215,7 +216,7 @@ router.get('/schedule/deleteschedule', isLoggedIn, function (req, res, next) {
 
 });
 
-router.post('/schedule/deleteschedule', function (req, res, next) {
+router.post('/schedule/deleteschedule', isLoggedIn, function (req, res, next) {
   var id = req.body.id;
   Schedule.findByIdAndRemove(id).exec();
   res.render('view', { message: '取消成功，請進入預約歷史查詢', style: 'index.css' });
