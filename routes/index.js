@@ -138,6 +138,7 @@ router.post('/shop/checkout', isLoggedIn, function (req, res, next) {
     })
     .then(charge => {
       var order = new Order({
+
         user: req.user,
         cart: cart,
         paymentId: charge.id,
@@ -180,7 +181,6 @@ router.get('/schedule/addschedule', isLoggedIn, function (req, res, next) {
 
 
 router.post('/schedule/addschedule', isLoggedIn, function (req, res, next) {
-
 
   let data = {
     user: req.user,
