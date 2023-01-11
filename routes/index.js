@@ -2,8 +2,8 @@ var express = require('express');
 const { default: Stripe } = require('stripe');
 var router = express.Router();
 var Cart = require('../models/cart');
-var Publishable_Key = 'pk_test_51HvfSXFV0g6r9YWu0aO2IbDbRx6jzJ4hdo37ucjKYKsoHSxV1cYyGSJEKFeAKHFGfrVEd4cHPRwfMScqYOnfsdsr00ShkBAVg0';
-var Secret_Key = 'sk_test_51HvfSXFV0g6r9YWuXcmGc1Q86lvpbpClUHPOkB8OovezzPJvxQFBzf4gmkNWu6RDoj92lkdjS9DZFSC3MGR1vm8e00yFf7kEUf';
+var Publishable_Key = '公鑰放置處';
+var Secret_Key = '私鑰放置處';
 const stripe = require('stripe')(Secret_Key);
 var Order = require('../models/order');
 
